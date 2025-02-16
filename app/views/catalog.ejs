@@ -1,0 +1,57 @@
+<%- include('./partials/header') %>
+
+<!--============= Catalogue =============-->
+<main>
+    <!-- Formulaire de filtrage amélioré -->
+    <form id="filter-form" action="/search/categorie" method="GET">
+        <fieldset>
+            <legend>Filtrer par catégorie</legend>
+            <div class="filter-options">
+                <select name="characteristic" id="filter">
+                    <option value="">Toutes les catégories</option>
+                    <option value="Corsé">Corsé</option>
+                    <option value="Acide">Acide</option>
+                    <option value="Fruité">Fruitée</option>
+                    <option value="Doux">Doux</option>
+                    <option value="Chocolaté">Chocolaté</option>
+                    <option value="Épicé">Épicé</option>
+                </select>
+                <button type="submit" class="btn-primary">Filtrer</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <% for (const characteristic in groupedCoffees ) { %>
+    <!-- Section par caractéristique -->
+    <section class="categorie">
+        <h2>Nos cafés <%= characteristic %></h2>
+        <div class="cafe-list">
+            <% groupedCoffees[characteristic].forEach(coffee => { %>
+                <div class="cafe-item <%= coffee.available ? '' : 'out' %>">
+                    <div class="cafe-text">
+                        <h3><%= coffee.name %></h3>
+                        <span class="stock <%= coffee.available ? '' : 'out-of-stock' %>">
+                            <%= coffee.available ? 'En stock' : 'Rupture de stock' %>
+                        </span>
+                        <p><%= coffee.description %></p>
+                        <% if (coffee.available) { %>
+                            <a href="/article/<%= coffee.id %>" class="btn-decouvrir">Découvrir</a>
+                            <a href="/cart/add/<%= coffee.id %> class="btn-cart">
+                                <i class="fa-solid fa-cart-plus"></i> Ajouter au panier
+                            </a>
+                        <% } else { %>
+                            <a class="btn disabled" aria-disabled="true">Indisponible</a>
+                        <% } %>
+                      
+                    </div>
+                    <div class="cafe-img">
+                        <img src="/assets/images/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+    <% } %>
+</main>
+
+<%- include('./partials/footer') %>

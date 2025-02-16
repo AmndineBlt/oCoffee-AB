@@ -1,0 +1,78 @@
+/* Conteneur principal */
+.admin-container {
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+/* Message de confirmation */
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Formulaire */
+#admin-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Champs */
+input, select, textarea {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid var(--bulma-primary);
+  border-radius: 5px;
+}
+
+/* Bouton */
+.btn-admin {
+  background: var(--bulma-primary);
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.btn-admin:hover {
+  background: var(--bulma-text);
+}
+
+/* Table des cafés */
+.admin-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+.admin-table th, .admin-table td {
+  border: 1px solid var(--bulma-primary);
+  padding: 10px;
+  text-align: center;
+}
+
+.admin-table img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin: auto;
+}
+
+/* Bouton supprimer */
+.btn-delete {
+  display: inline-block;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-delete:hover {
+  background: darkred;
+}

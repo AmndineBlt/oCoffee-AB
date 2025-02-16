@@ -1,0 +1,44 @@
+<%- include('./partials/header') %>
+
+<!-- 📌 Page Panier -->
+<main class="cart-container">
+    <h1>Votre Panier 🛒</h1>
+
+    <% if (coffeesCart.length === 0) { %>
+        <p class="empty-cart">Votre panier est vide.</p>
+        <a href="/catalog" class="btn-primary">Voir le catalogue</a>
+    <% } else { %>
+        <div class="cart-items">
+            <% let total = 0; %>
+            <% coffeesCart.forEach(coffee => { %>
+                <% let subTotal = coffee.price_per_kg * coffee.quantity; %>
+                <% total += subTotal; %>
+                <div class="cart-item">
+                    <div class="cart-img">
+                        <img src="/assets/images/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
+                        <span class="badge <%= coffee.main_characteristic.toLowerCase() %>">
+                            <%= coffee.main_characteristic %>
+                        </span>
+                        <span class="reference">Réf: <%= coffee.reference %></span>
+                    </div>
+                    <div class="cart-details">
+                        <h3><%= coffee.name %></h3>
+                        <p><strong>Origine :</strong> <%= coffee.origin %></p>
+                        <p><strong>Prix au kilo :</strong> <%= coffee.price_per_kg %>€</p>
+                        <p><a href="/cart/remove/<%= coffee.id %>" class="btn-quantity"><i class="fa-solid fa-minus"></i></a>
+                            <span><%= coffee.quantity %></span>
+                            <a href="/cart/add/<%= coffee.id %>" class="btn-quantity"><i class="fa-solid fa-plus"></i></a></p>
+                        <p><strong>Sous-total :</strong> <%= subTotal.toFixed(2) %>€</p>
+                        <a href="/cart/remove/<%= coffee.id %>" class="btn-delete"><i class="fa-solid fa-cart-arrow-down"></i>Retirer</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+        <h2>Total : <%= total.toFixed(2) %>€</h2>
+
+        <a href="/cart/clear" class="btn-danger">Vider le panier</a>
+    <% } %>
+</main>
+
+<%- include('./partials/footer') %>

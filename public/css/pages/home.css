@@ -1,0 +1,164 @@
+/*======= Main : A Porpos =======*/
+.about-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--bulma-background);
+  padding: 40px 20px;
+}
+
+.about-content {
+  max-width: 500px;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  color: var(--bulma-primary);
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: var(--bulma-text);
+  line-height: 1.5;
+}
+
+.about-image img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  background: var(--bulma-secondary-text);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--bulma-secondary);
+  transform: translateY(-3px);
+}
+
+/* Responsive : Tablette & Mobile */
+@media (max-width: 1023px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    row-gap: 1.5rem;
+  }
+
+  .about-text {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .about-photo img {
+    width: 50%;
+    justify-self: center;
+  }
+}
+
+/*======= Main : Nouveautés =======*/
+/* Conteneur des nouveautés */
+.nouveautes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 10%;
+}
+
+/* Cartes des cafés */
+.cafe-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+}
+
+/* Image café avec pastille */
+.cafe-img {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+}
+
+.cafe-img img {
+  width: 100%; 
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: auto;
+}
+
+/* Pastille `main_characteristic` */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Couleurs des pastilles */
+.badge.corsé { background: var(--badge-corse); } /* Marron */
+.badge.acide { background: var(--badge-acide); } /* Orange */
+.badge.fruité { background: var(--badge-fruite); } /* Vert */
+.badge.doux { background: var(--badge-doux); } /* Jaune */
+.badge.chocolaté { background: var(--badge-chocolate); } /* Brun */
+.badge.épicé { background: var(--badge-epice); } /* rouge */
+
+/* Style du bouton "Découvrir" */
+.btn-decouvrir {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background: var(--bulma-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-decouvrir:hover {
+  background: var(--bulma-secondary);
+  transform: scale(1.05);
+}
+
+/* Masquer complètement une version selon la taille d'écran */
+.mobile-only {
+  display: none !important;
+}
+
+.desktop-only {
+  display: flex;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mobile-only {
+    display: block !important;
+  }
+  
+  .desktop-only {
+    display: none !important;
+  }
+}

@@ -1,0 +1,69 @@
+<%- include('./partials/header') %>
+
+<!--============= HEADER =============-->
+<header class="header-container">
+    <div class="header-content">
+        <h1>Bienvenue dans notre boutique,</h1>
+        <p>où règne une ambiance chaleureuse et accueillante qui éveille tous vos sens. Dès que vous franchissez la porte, vous êtes enveloppé d'une douce symphonie d'arômes envoûtants de café fraîchement moulu.</p>
+    </div>
+</header>
+
+<!--============= MAIN =============-->
+<main>
+    <!-- Section "À propos" -->
+    <section class="about-section">
+        <div class="about-content">
+            <h2>Notre Passion pour le Café</h2>
+            <p>
+                Depuis plus de 10 ans, nous parcourons le monde à la recherche des grains les plus raffinés. Chez <strong>oCoffee</strong>, chaque tasse raconte une histoire, un voyage, une tradition.
+            </p>
+            <p>
+                Venez découvrir nos cafés soigneusement sélectionnés et torréfiés artisanalement pour offrir une expérience gustative unique.
+            </p>
+            <a href="/catalog" class="btn">Explorer notre sélection</a>
+        </div>
+    
+        <div class="about-image">
+            <img src="/assets/images/about.jpg" alt="Notre boutique oCoffee">
+        </div>
+    </section>
+
+    <!-- Section Nouveautés -->
+    <h2>Nos dernières nouveautés</h2>
+
+    <!-- Mode Desktop (Grille statique) -->
+    <section class="nouveautes desktop-only">
+        <% coffees.forEach(coffee => { %>
+            <div class="cafe-card">
+                <div class="cafe-img">
+                    <img src="/assets/images/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
+                    <span class="badge <%= coffee.main_characteristic.toLowerCase() %>"><%= coffee.main_characteristic %></span>
+                </div>
+                <h3><%= coffee.name %></h3>
+                <a href="/article/<%= coffee.id %>" class="btn-decouvrir">Découvrir</a>
+            </div>
+        <% }) %>
+    </section>
+
+    <!-- Mode Tablette/Mobile (Carrousel) -->
+    <section id="coffee-carousel" class="splide mobile-only" aria-label="Café Carousel">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <% coffees.forEach(coffee => { %>
+                    <li class="splide__slide">
+                        <div class="cafe-card">
+                            <div class="cafe-img">
+                                <img src="/assets/images/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
+                                <span class="badge <%= coffee.main_characteristic.toLowerCase() %>"><%= coffee.main_characteristic %></span>
+                            </div>
+                            <h3><%= coffee.name %></h3>
+                            <a href="/article/<%= coffee.id %>" class="btn-decouvrir">Découvrir</a>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+</section>
+</main>
+
+<%- include('./partials/footer') %>

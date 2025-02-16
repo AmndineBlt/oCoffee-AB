@@ -1,0 +1,24 @@
+<%- include('./partials/header') %>
+
+<main class="contact-container">
+
+  <h1>Où nous trouver 🗺️</h1>
+  <p>Adresse : 42 rue Hauts-de-Cloques</p>
+
+  <!-- Div où la carte sera affichée -->
+  <div id="map"></div>
+
+  <h1>Contactez-nous 📩</h1>
+
+  <form id="contact-form">
+      <input type="text" id="name" name="name" placeholder="Nom" required>
+      <input type="email" id="email" name="email" placeholder="Email" required>
+      <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+
+      <button id="send-button" type="submit">Envoyer</button>
+  </form>
+
+  <p id="status-message"></p>
+</main>
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,41 @@
+{
+  "engines": {
+    "node": "22.x"
+  },
+  "name": "s09-ocoffee-amndineblt",
+  "version": "1.0.0",
+  "description": "[Le projet](./docs/demande-client/)",
+  "main": "client.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Sushi/S09-ocoffee-AmndineBlt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/O-clock-Sushi/S09-ocoffee-AmndineBlt/issues"
+  },
+  "homepage": "https://github.com/O-clock-Sushi/S09-ocoffee-AmndineBlt#readme",
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "bcryptjs": "^3.0.0",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.20.0"
+  }
+}

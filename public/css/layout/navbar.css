@@ -1,0 +1,154 @@
+/*=======Barre de navidation=======*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 100;
+}
+
+/* Effet au survol des liens */
+nav #nav-links li a {
+  color: var(--bulma-text);
+  transition: color 0.3s ease-in-out;
+}
+
+nav #nav-links li a:hover {
+  color: var(--bulma-primary);
+}
+
+/*  Effet au survol des icônes */
+nav #nav-links li i {
+  transition: transform 0.3s ease-in-out;
+}
+
+nav #nav-links li:hover i {
+  transform: scale(1.2);
+}
+
+nav #nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+nav #nav-logo span{
+font-size: 2.5rem;
+}
+
+nav img {
+  width: 100px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  margin: 10px 30px;
+}
+
+nav #nav-links li {
+  padding: 0 10px;
+  font-size: 1.2rem;
+}
+
+nav #nav-links li i {
+  padding: 0 5px;
+}
+
+/* Responsive : Desktop */
+@media (min-width: 1024px) {
+  #burger-menu {
+    display: none; /* Cache le bouton burger */
+  }
+}
+
+/* Responsive : Mobile & Tablette */
+@media (max-width: 1023px) {
+  nav {
+    position: relative;
+    padding: 10px 20px;
+    background: var(--bulma-background); /* Fond plus foncé */
+  }
+
+  /* Icône burger */
+  #burger-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bulma-primary);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+  }
+
+  /* Menu placé à côté du bouton */
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    right: 60px; /* Place le menu à côté */
+    width: auto;
+    background: var(--bulma-background);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #nav-links li {
+    padding: 10px 0;
+  }
+
+  /* Affichage du menu quand actif */
+  #nav-links.active {
+    display: flex;
+  }
+}
+
+
+/* Barre de recherche */
+#search-bar {
+  display: flex;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#search-bar input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 1rem;
+  width: 250px;
+}
+
+#search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+#search-bar button:hover {
+  color: var(--secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #search-bar {
+      width: 100%;
+      max-width: 250px;
+  }
+
+  #search-bar input {
+      width: 150px;
+  }
+}

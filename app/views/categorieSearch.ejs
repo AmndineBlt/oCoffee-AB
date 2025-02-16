@@ -1,0 +1,28 @@
+<%- include('./partials/header') %>
+
+<!-- Page recherche par name -->
+<main class="cart-container">
+        <div class="cart-items">
+            <% for (const coffee of categorieCoffees) { %>
+              <div class="cart-item">
+                  <div class="cart-img">
+                      <img src="/assets/images/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
+                      <span class="badge <%= coffee.main_characteristic.toLowerCase() %>">
+                          <%= coffee.main_characteristic %>
+                      </span>
+                      <span class="reference">Réf: <%= coffee.reference %></span>
+                  </div>
+                  <div class="cart-details">
+                      <h3><%= coffee.name %></h3>
+                      <p><strong>Origine :</strong> <%= coffee.origin %></p>
+                      <p><strong>Prix au kilo :</strong> <%= coffee.price_per_kg %>€</p>
+                      <a href="/cart/add/<%= coffee.id %> class="btn-cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                      </a>
+                      <a href="/article/<%= coffee.id %>" class="btn-decouvrir">Découvrir</a>
+                  </div>
+              </div>
+            <% } %>
+        </div>
+
+<%- include('./partials/footer') %>

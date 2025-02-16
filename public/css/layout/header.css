@@ -1,0 +1,83 @@
+/*=======Header principal=======*/
+.header-container {
+  background-image: url("/assets/img-background/cup-with-coffee-beans-copy-space.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* Ajuste la hauteur et évite la répétition */
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header-content {
+  right: 50px;
+}
+
+.header-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--bulma-main-text);
+}
+
+.header-content p {
+  font-size: 1.3rem;
+  color: var(--bulma-secondary-text);
+  width: 700px;
+}
+
+
+/* Responsive : Tablette */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header-container {
+    height: 400px;
+  }
+
+  .imgTop {
+    display: none;
+  }
+
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .header-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .logo {
+    width: 300px;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/*  Responsive : Mobile */
+@media (max-width: 767px) {
+  .header-container {
+    height: 300px;
+  }
+
+  .imgTop {
+    display: none;
+  }
+
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-content h2 {
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 200px;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

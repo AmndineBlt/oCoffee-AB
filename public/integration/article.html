@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique de café - oCoffee</title>
+    <!--BULMA CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/custom-bulma.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <!--JS-->
+    <script defer src="/public/js/script.js"></script>
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+</head>
+
+<body>
+    <!--============= Barre de navigation =============-->
+    <nav>
+        <div id="nav-logo">
+            <img src="/public/assets/logo.svg" alt="Logo oCoffee">
+            <span>oCoffee</span>
+        </div>
+    
+        <!-- Icône menu burger (masqué par défaut en desktop) -->
+        <button id="burger-menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    
+        <ul id="nav-links">
+            <li><a href="./accueil.html"><i class="fa-solid fa-mug-saucer"></i>Accueil</a></li>
+            <li><a href="./catalogue.html"><i class="fa-solid fa-book-open"></i>Catalogue</a></li>
+            <li><a href="#"><i class="fa-solid fa-envelope"></i>Contact</a></li>
+        </ul>
+    </nav>
+
+    <!--============= Détails du café =============-->
+    <main class="article-container">
+        <div class="article-img">
+            <img id="cafe-image" src="/public/assets/images/100955890.png" alt="Image du café">
+        </div>
+
+        <div class="article-text">
+            <h1 id="cafe-nom"></h1>
+            <p id="cafe-description"></p>
+            <ul>
+                <li><strong>Référence : </strong> <span id="cafe-reference"></span></li>
+                <li><strong>Caractéristique principale : </strong> <span id="cafe-reference"></span></li>
+                <li><strong>Origine : </strong> <span id="cafe-origine"></span></li>
+                <li><strong>Prix au kilo : </strong> <span id="cafe-prix"></span></li>
+                <li><strong>Description : </strong> <span id="cafe-prix"></span></li>
+            </ul>
+            <button onclick="location.href='catalogue.html'" class="btn-decouvrir">Retour au catalogue</button>
+        </div>
+    </main>
+
+    <!--============= FOOTER =============-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="/public/assets/logo.svg" alt="Logo oCoffee">
+                <span>oCoffee</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="./accueil.html">Accueil</a></li>
+                <li><a href="./catalogue.html">Catalogue</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <p class="footer-credit">© 2025 oCoffee. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

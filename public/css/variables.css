@@ -1,0 +1,25 @@
+/* ✅ Variables globales pour tout le site */
+:root {
+    --bulma-primary: #A3845C;  /* Marron café */
+    --bulma-main-background: #fffbf8; /* Blanc crème */
+    --bulma-background: #D9BEA5; /* Beige crème */
+    --bulma-text: #5B3F24; /* Brun foncé */
+    --bulma-main-text: #1C3E33;
+    --bulma-secondary-text: #3F8C86;
+
+    /* Couleurs des badges */
+    --badge-corse: #8B4513;
+    --badge-acide: #FFA500;
+    --badge-fruite: #39b339;
+    --badge-doux: #FFD700;
+    --badge-chocolate: #6B4226;
+    --badge-epice: #88231c;
+
+    /* Typographie */
+    --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Espacements */
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+}

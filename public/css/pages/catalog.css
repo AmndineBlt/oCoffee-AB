@@ -1,0 +1,233 @@
+/* ----------------- Page Catalogue ----------------- */
+/* Conteneur global */
+.categorie {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.categorie h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--bulma-primary);
+}
+
+/* Liste des cafés */
+.cafe-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Bloc café (par défaut) */
+.cafe-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bulma-background);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 30px;
+}
+
+/* Uniformiser les images des cafés */
+.cafe-img img {
+  width: 100%; 
+  max-width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Texte café */
+.cafe-text {
+  width: 30%;
+  text-align: left;
+  margin: auto;
+}
+
+.cafe-text h3 {
+  font-size: 1.5rem;
+  color: var(--bulma-text);
+}
+
+.cafe-text .stock {
+  display: inline-block;
+  background: #27ae60;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* Style pour les produits en rupture de stock */
+.out-of-stock {
+  background: #e74c3c; /* Rouge */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* Masquer le span "En stock" si l'article est en rupture */
+.cafe-item.out .stock {
+  display: none;
+}
+
+/* Assombrir l'image d'un café en rupture */
+.cafe-item.out {
+  opacity: 0.5; /* Café grisé */
+  position: relative;
+}
+
+/* Affichage d’un message visuel */
+.cafe-item.out::after {
+  content: "Rupture de stock";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(231, 76, 60, 0.8);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Effet hover pour le bouton actif */
+.btn:hover {
+  background: var(--bulma-secondary);
+}
+
+/* Désactiver le bouton en rupture */
+.btn.disabled {
+  background: grey !important;
+  cursor: not-allowed;
+  pointer-events: none; /* Empêche tout clic */
+  opacity: 0.6;
+}
+
+/* Responsive :  Mode tablette */
+@media (max-width: 1023px) {
+  .cafe-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .cafe-item.inverse {
+    flex-direction: column;
+  }
+
+  .cafe-text {
+    text-align: center;
+    width: 100%;
+  }
+
+  .cafe-img {
+    width: 50%;
+  }
+}
+
+/* Responsive : Mode mobile  */
+@media (max-width: 767px) {
+  .cafe-item {
+    padding: 15px;
+  }
+
+  .cafe-img {
+    width: 100%;
+  }
+
+  .cafe-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .cafe-text ul {
+    font-size: 0.9rem;
+  }
+}
+
+/* ✅ Conteneur du formulaire */
+#filter-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ✅ Style du fieldset */
+#filter-form fieldset {
+  border: 2px solid var(--bulma-primary);
+  border-radius: 10px;
+  padding: var(--spacing-md);
+  background: var(--bulma-main-background);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Légende du formulaire */
+#filter-form legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--bulma-primary);
+  padding: 5px 10px;
+  background: var(--bulma-main-background);
+  border-radius: 5px;
+}
+
+/* ✅ Conteneur des options */
+.filter-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
+/* ✅ Select */
+.filter-options select {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid var(--bulma-primary);
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+/* ✅ Bouton de filtrage */
+.filter-options .btn-primary {
+  background: var(--bulma-primary);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-options .btn-primary:hover {
+  background: var(--bulma-text);
+}
+
+/* 📌 Responsive */
+@media (max-width: 768px) {
+  .filter-options {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+  }
+
+  .filter-options select {
+      width: 100%;
+  }
+}
+

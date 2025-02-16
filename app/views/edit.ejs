@@ -1,0 +1,36 @@
+<%- include('./partials/header') %>
+
+<main class="admin-container">
+    <h1>Modifier le café ☕</h1>
+
+    <form id="admin-form" action="/admin/edit/<%= coffee.id %>" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="existingImage" value="<%= coffee.image %>">
+        
+        <input type="text" name="name" value="<%= coffee.name %>" required>
+        <textarea name="description" required><%= coffee.description %></textarea>
+        <input type="text" name="reference" value="<%= coffee.reference %>" required>
+        <input type="text" name="origin" value="<%= coffee.origin %>" required>
+        <input type="number" step="0.01" name="price_per_kg" value="<%= coffee.price_per_kg %>" required>
+        
+        <select name="main_characteristic" required>
+            <option value="Corsé" <%= coffee.main_characteristic === "Corsé" ? "selected" : "" %>>Corsé</option>
+            <option value="Acide" <%= coffee.main_characteristic === "Acide" ? "selected" : "" %>>Acide</option>
+            <option value="Fruitée" <%= coffee.main_characteristic === "Fruitée" ? "selected" : "" %>>Fruitée</option>
+            <option value="Doux" <%= coffee.main_characteristic === "Doux" ? "selected" : "" %>>Doux</option>
+            <option value="Chocolaté" <%= coffee.main_characteristic === "Chocolaté" ? "selected" : "" %>>Chocolaté</option>
+        </select>
+
+        <label>
+            <input type="checkbox" name="available" <%= coffee.available ? "checked" : "" %>> Disponible
+        </label>
+
+        <p>Image actuelle :</p>
+        <img src="/uploads/<%= coffee.image %>" alt="<%= coffee.name %>">
+        
+        <input type="file" name="image" accept="image/*">
+
+        <button type="submit">Enregistrer</button>
+    </form>
+</main>
+
+<%- include('./partials/footer') %>

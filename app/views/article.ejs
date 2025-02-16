@@ -1,0 +1,28 @@
+<%- include('./partials/header') %>
+
+<!-- Section Détail du Café -->
+<main class="article-container">
+    <div class="article-card">
+        <!-- Image du café avec la référence et la pastille -->
+        <div class="article-img">
+            <img src="/assets/images/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
+            <span class="badge <%= coffee.main_characteristic.toLowerCase() %>"><%= coffee.main_characteristic %></span>
+            <span class="reference">Réf: <%= coffee.reference %></span>
+        </div>
+
+        <!-- Détails du café -->
+        <div class="article-text">
+            <h1><%= coffee.name %></h1>
+            <p><%= coffee.description %></p>
+            <ul>
+                <li><strong>Origine :</strong> <%= coffee.origin %></li>
+                <li><strong>Prix au kilo :</strong> <%= coffee.price_per_kg %>€</li>
+            </ul>
+            <a href="/cart/add/<%= coffee.id %> class="btn-cart">
+                <i class="fa-solid fa-cart-plus"></i> Ajouter au panier
+            </a>
+        </div>
+    </div>
+</main>
+
+<%- include('./partials/footer') %>

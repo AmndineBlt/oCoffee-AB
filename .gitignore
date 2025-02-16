@@ -1,0 +1,7 @@
+node_modules/
+docs/
+eslint.config.js
+.env
+backup_ocoffee.sql
+hashPassword.js
+etape.md

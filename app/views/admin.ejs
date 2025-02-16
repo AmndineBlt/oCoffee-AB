@@ -1,0 +1,62 @@
+<%- include('./partials/header') %>
+
+<main class="admin-container">
+    <h1>Gérer les cafés ☕</h1>
+
+    <% if (success) { %>
+        <p class="success-message">✅ Action réalisée avec succès !</p>
+    <% } %>
+
+    <h2>Ajouter un café</h2>
+    <form id="admin-form" action="/admin/add" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Nom du café" required>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <input type="text" name="reference" placeholder="Référence" required>
+        <input type="text" name="origin" placeholder="Origine" required>
+        <input type="number" step="0.01" name="price_per_kg" placeholder="Prix au kilo (€)" required>
+        <select name="main_characteristic" required>
+            <option value="Corsé">Corsé</option>
+            <option value="Acide">Acide</option>
+            <option value="Fruité">Fruitée</option>
+            <option value="Doux">Doux</option>
+            <option value="Chocolaté">Chocolaté</option>
+            <option value="Épicé">Épicé</option>
+        </select>
+        <label>
+            <input type="checkbox" name="available"> Disponible
+        </label>
+        <input type="file" name="image" accept="image/*">
+        <button class="btn-admin" type="submit">Ajouter le café</button>
+    </form>
+
+    <h2>Liste des cafés</h2>
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Référence</th>
+                <th>Origine</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% coffees.forEach(coffee => { %>
+                <tr>
+                    <td><img src="/assets/images/<%= coffee.reference %>.png" alt="<%= coffee.name %>"></td>
+                    <td><%= coffee.name %></td>
+                    <td><%= coffee.reference %></td>
+                    <td><%= coffee.origin %></td>
+                    <td><%= coffee.price_per_kg %>€</td>
+                    <td>
+                        <a href="/admin/edit/<%= coffee.id %>" class="btn-edit"><i class="fa-solid fa-pen"></i> Modifier</a>
+                        <a href="/admin/delete/<%= coffee.id %>" class="btn-delete" onclick="return confirm('Voulez-vous supprimer ce café ?');"><i class="fa-solid fa-trash"></i> Supprimer</a>
+                    </td>                    
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</main>
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,49 @@
+/* Conteneur principal */
+.contact-container {
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+/* Formulaire */
+#contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Champs */
+#contact-form input,
+#contact-form textarea {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid var(--bulma-primary);
+  border-radius: 5px;
+}
+
+/* Bouton */
+#send-button {
+  background: var(--bulma-primary);
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background: var(--bulma-background);
+}
+
+/* Message de confirmation ou d'erreur */
+#status-message {
+  margin-top: var(--spacing-md);
+  font-size: 1rem;
+}
+
+#map {
+  width: 45%;
+  height: 300px;
+  margin: 25px auto;
+}
