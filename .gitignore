@@ -1,7 +1,6 @@
 node_modules/
-docs/
 eslint.config.js
 .env
-backup_ocoffee.sql
+backup-ocoffee.sql
 hashPassword.js
 etape.md

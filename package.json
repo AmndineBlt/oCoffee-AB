@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "22.x"
-  },
   "name": "s09-ocoffee-amndineblt",
   "version": "1.0.0",
   "description": "[Le projet](./docs/demande-client/)",

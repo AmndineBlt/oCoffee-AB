@@ -37,24 +37,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
     splide.mount(); // Il faut appeler mount() sur l'instance splide.
 });
-
-// BARRE DE RECHERCHE
-document.addEventListener("DOMContentLoaded", () => {
-  const searchBar = document.getElementById("search-bar");
-  const searchInput = searchBar.querySelector("input");
-  const searchButton = searchBar.querySelector("button");
-
-  searchButton.addEventListener("click", (e) => {
-    const isOpen = searchBar.classList.contains("active");
-
-    if (!isOpen) {
-      e.preventDefault(); // Empêche l'envoi immédiat
-      searchBar.classList.add("active");
-      searchInput.focus();
-    } else if (isOpen && document.activeElement !== searchInput) {
-      e.preventDefault();
-      searchBar.classList.remove("active");
-      searchInput.value = "";
-    }
-  });
-});
