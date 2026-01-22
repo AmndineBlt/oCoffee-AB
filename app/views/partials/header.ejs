@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Boutique de café - oCoffee</title>
-    
+
         <!-- Styles globaux -->
         <link rel="stylesheet" href="/css/reset.css">
         <link rel="stylesheet" href="/css/styles.css">
@@ -29,26 +29,26 @@
             <img src="/assets/logo.svg" alt="Logo oCoffee">
             <span>oCoffee</span>
         </div>
-    
-        <!-- Icône menu burger (masqué par défaut en desktop) -->
+
+        <!-- Icône menu burger -->
         <button id="burger-menu">
             <i class="fa-solid fa-bars"></i>
         </button>
 
         <!-- Barre de recherche -->
         <form id="search-bar" action="/search/name" method="GET" class="search-bar">
-            <input type="text" name="search" placeholder="Rechercher un café..." required>
+            <input type="text" name="search" placeholder="Rechercher un café...">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-    
+
         <ul id="nav-links">
             <li><a href="/"><i class="fa-solid fa-mug-saucer"></i>Accueil</a></li>
             <li><a href="/catalog"><i class="fa-solid fa-book-open"></i>Catalogue</a></li>
             <li>
                 <a href="/cart">
-                    <i class="fa-solid fa-cart-shopping"></i> Panier    
+                    <i class="fa-solid fa-cart-shopping"></i> Panier
                 </a>
-            </li>                       
+            </li>
             <li><a href="/contact"><i class="fa-solid fa-envelope"></i>Contact</a></li>
             <li><% if (session.admin) { %>
                     <a href="/logout"><i class="fa-solid fa-right-to-bracket"></i> Déconnexion</a>

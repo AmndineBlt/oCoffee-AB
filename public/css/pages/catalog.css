@@ -2,14 +2,13 @@
 /* Conteneur global */
 .categorie {
   width: 90%;
-  max-width: 1200px;
   margin: auto;
   text-align: center;
   padding: 40px 0;
 }
 
 .categorie h2 {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   margin-bottom: 20px;
   color: var(--bulma-primary);
 }
@@ -18,24 +17,29 @@
 .cafe-list {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
 }
 
 /* Bloc café (par défaut) */
 .cafe-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  text-align: center;
   background: var(--bulma-background);
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  gap: 30px;
+  gap: 15px;
 }
 
 /* Uniformiser les images des cafés */
+.cafe-img {
+  width: 100%;
+}
+
 .cafe-img img {
-  width: 100%; 
+  width: 100%;
   max-width: 250px;
   height: 250px;
   object-fit: cover;
@@ -44,16 +48,20 @@
 
 /* Texte café */
 .cafe-text {
-  width: 30%;
-  text-align: left;
-  margin: auto;
+  width: 100%;
+  text-align: center;
 }
 
 .cafe-text h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--bulma-text);
 }
 
+.cafe-text ul {
+  font-size: 0.9rem;
+}
+
+/* Étiquette de stock */
 .cafe-text .stock {
   display: inline-block;
   background: #27ae60;
@@ -65,7 +73,7 @@
 
 /* Style pour les produits en rupture de stock */
 .out-of-stock {
-  background: #e74c3c; /* Rouge */
+  background: #e74c3c;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
@@ -111,56 +119,37 @@
   opacity: 0.6;
 }
 
-/* Responsive :  Mode tablette */
-@media (max-width: 1023px) {
+/* Responsive : Desktop */
+@media (min-width: 1024px) {
   .cafe-item {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
-    gap: 15px;
-  }
-
-  .cafe-item.inverse {
-    flex-direction: column;
+    text-align: left;
+    gap: 30px;
+    padding: 20px;
   }
 
   .cafe-text {
-    text-align: center;
-    width: 100%;
+    width: 30%;
+    text-align: left;
+    margin: auto;
   }
 
-  .cafe-img {
-    width: 50%;
-  }
-}
-
-/* Responsive : Mode mobile  */
-@media (max-width: 767px) {
-  .cafe-item {
-    padding: 15px;
-  }
-
-  .cafe-img {
-    width: 100%;
-  }
-
-  .cafe-text h3 {
-    font-size: 1.3rem;
-  }
-
-  .cafe-text ul {
-    font-size: 0.9rem;
+  .cafe-img img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
   }
 }
 
-/* ✅ Conteneur du formulaire */
+/* Conteneur du formulaire */
 #filter-form {
   display: flex;
   justify-content: center;
   margin-bottom: var(--spacing-lg);
 }
 
-/* ✅ Style du fieldset */
+/* Style du fieldset */
 #filter-form fieldset {
   border: 2px solid var(--bulma-primary);
   border-radius: 10px;
@@ -172,7 +161,7 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* ✅ Légende du formulaire */
+/* Légende du formulaire */
 #filter-form legend {
   font-size: 1.2rem;
   font-weight: bold;
@@ -182,18 +171,17 @@
   border-radius: 5px;
 }
 
-/* ✅ Conteneur des options */
+/* Conteneur des options */
 .filter-options {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-md);
+  flex-direction: column;
+  gap: var(--spacing-sm);
   margin-top: var(--spacing-sm);
 }
 
-/* ✅ Select */
+/* Select */
 .filter-options select {
-  flex: 1;
+  width: 100%;
   padding: 10px;
   font-size: 1rem;
   border: 2px solid var(--bulma-primary);
@@ -202,7 +190,7 @@
   cursor: pointer;
 }
 
-/* ✅ Bouton de filtrage */
+/* Bouton de filtrage */
 .filter-options .btn-primary {
   background: var(--bulma-primary);
   color: white;
@@ -219,15 +207,18 @@
   background: var(--bulma-text);
 }
 
-/* 📌 Responsive */
-@media (max-width: 768px) {
+/* Responsive : Tablette et Desktop */
+@media (min-width: 768px) {
   .filter-options {
-      flex-direction: column;
-      gap: var(--spacing-sm);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
   }
 
   .filter-options select {
-      width: 100%;
+    width: auto;
+    flex: 1;
   }
 }
 

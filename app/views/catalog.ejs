@@ -27,7 +27,7 @@
         <h2>Nos cafés <%= characteristic %></h2>
         <div class="cafe-list">
             <% groupedCoffees[characteristic].forEach(coffee => { %>
-                <div class="cafe-item <%= coffee.available ? '' : 'out' %>">
+                <article class="cafe-item <%= coffee.available ? '' : 'out' %>">
                     <div class="cafe-text">
                         <h3><%= coffee.name %></h3>
                         <span class="stock <%= coffee.available ? '' : 'out-of-stock' %>">
@@ -35,19 +35,19 @@
                         </span>
                         <p><%= coffee.description %></p>
                         <% if (coffee.available) { %>
-                            <a href="/article/<%= coffee.id %>" class="btn-decouvrir">Découvrir</a>
-                            <a href="/cart/add/<%= coffee.id %> class="btn-cart">
+                            <button href="/article/<%= coffee.id %>" class="btn-decouvrir">Découvrir</button>
+                            <button href="/cart/add/<%= coffee.id %>" class="btn-cart">
                                 <i class="fa-solid fa-cart-plus"></i> Ajouter au panier
-                            </a>
+                            </button>
                         <% } else { %>
-                            <a class="btn disabled" aria-disabled="true">Indisponible</a>
+                            <button class="btn disabled" aria-disabled="true">Indisponible</button>
                         <% } %>
-                      
+
                     </div>
                     <div class="cafe-img">
                         <img src="/assets/images/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
                     </div>
-                </div>
+                </article>
             <% }) %>
         </div>
     </section>

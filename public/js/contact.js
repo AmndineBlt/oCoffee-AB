@@ -1,6 +1,6 @@
 // Initialisation d'EmailJS
 (function(){
-  const publicKey = "10nEgbl6RMh05UNJL";  // Remplace ça par ta clé publique
+  const publicKey = "10nEgbl6RMh05UNJL";  // Remplace ça par la clé publique
   emailjs.init(publicKey);
   //console.log("Clé publique utilisée :", publicKey);
 })();
